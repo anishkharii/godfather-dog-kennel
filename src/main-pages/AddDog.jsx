@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -19,8 +19,8 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { Camera, Image, AlertCircle, LoaderCircle, Copy } from "lucide-react";
-import { uploadImage } from "./services/uploadImage";
-import supabase from "./services/supabase";
+import { uploadImage } from "../services/uploadImage";
+import supabase from "../services/supabase";
 import { toast } from "sonner";
 
 export default function AddDogPage() {
@@ -51,8 +51,6 @@ export default function AddDogPage() {
     } else {
       setFormData((prev) => ({ ...prev, [name]: value }));
     }
-
-    // Clear error on change
     setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
@@ -74,8 +72,8 @@ export default function AddDogPage() {
 
     try {
       setLoading(true);
-      // const imageUrl = await uploadImage(formData.photo);
-      const imageUrl = 'some url of image'
+      const imageUrl = await uploadImage(formData.photo);
+      // const imageUrl = 'some url of image'
       const randomId = generateRandomId();
       const sendingData = {
         breed: formData.breed,

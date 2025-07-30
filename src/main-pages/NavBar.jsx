@@ -7,7 +7,7 @@ function NavBar() {
       <div className="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-start space-x-4">
         {/* Logo */}
         <img
-          src="https://res.cloudinary.com/dv06id9q6/image/upload/v1752860752/20250718_231358_cjbe1h.png"
+          src="https://res.cloudinary.com/dv06id9q6/image/upload/v1753682515/20250718_231358_efatuf.webp"
           alt="Logo"
           className="w-16 h-16 object-cover"
         />
