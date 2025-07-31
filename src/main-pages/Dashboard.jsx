@@ -45,8 +45,9 @@ function Dashboard() {
   useEffect(() => {
     let filtered = dogs;
     if (dateFilter) {
-      const selectedDate = format(dateFilter, "yyyy-MM-dd").toDateString();
-      filtered = filtered.filter((dog) => dog.date === selectedDate);
+      console.log(new Date(dateFilter).toDateString());
+      const selectedDate = new Date(dateFilter).toDateString();
+      filtered = filtered.filter((dog) => new Date(dog.created_at).toDateString() === selectedDate);
     }
     if (ownerFilter) {
       filtered = filtered.filter((dog) =>
