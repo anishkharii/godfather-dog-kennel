@@ -272,7 +272,7 @@ export default function AddDogPage() {
                       <Label htmlFor="notes">Notes</Label>
                       <Textarea
                         name="notes"
-                        placeholder="Temperament, food allergies, etc."
+                        placeholder="Address, Phone, etc..."
                         value={formData.notes}
                         onChange={handleChange}
                       />
